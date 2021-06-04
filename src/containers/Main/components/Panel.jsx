@@ -3,6 +3,9 @@ import RefreshIcon from '../../../assets/images/refresh.svg'
 import { Card, Typography, Button, Select, MenuItem } from '../../../components'
 import COUNTRIES from '../../../commons/constants/countries'
 import { CardPanelContentStyled, ItemStyled } from './style'
+import pn1 from '../../../../src/assets/images/pn1.png'
+import pn2 from '../../../../src/assets/images/pn2.png'
+import pn3 from '../../../../src/assets/images/pn3.png'
 
 const navigatorHasShare = navigator.share
 
@@ -28,7 +31,7 @@ function Panel({ updateAt, onChange, data, country, getCoviddata }) {
     navigator.share({
       title: `Dados do Covid19 - ${country}`,
       text: textCovid19,
-      url: 'https://painelcoronavirus.netlify.app'
+      url: 'https://painelcoronavirus.netlify.app/'
     })
   }
 
@@ -50,22 +53,30 @@ function Panel({ updateAt, onChange, data, country, getCoviddata }) {
 
   return (
     <Card>
+  <div className="dv">
+    <div className="p-1">
       <CardPanelContentStyled>
         <div>
-          <Typography variant="h3" component="span">Painel Coronavírus</Typography>
-          
-          <div className="pt-2">
+          <div className="tl">Painel Covid-19</div>
+          <div className="tl-2">Atualizado em: {updateAt}</div>
+          <div className="pt-2" align="center">
             <Select onChange={onChange} value={country}>
               {COUNTRIES.map(renderCountries)}
             </Select>
           </div>
         </div>
-        <div align="right">
-        {navigatorHasShare ? renderShareButton : renderCopyButton}<br></br><br></br><br></br>
-        <Typography variant="body2" component="span" >Atualizado em: {updateAt}</Typography>
-        </div>
       </CardPanelContentStyled>
-    </Card>
+    </div>
+    <div className="p-2">
+    <a href="https://coronavirus.saude.mg.gov.br/blog/101-mascaras-e-covid-19" target="_blank"><img src={pn1} alt="" class="img"/></a>
+    <a href="https://coronavirus.saude.mg.gov.br/blog/109-higienizacao-das-maos" target="_blank"><img src={pn2} alt=""class="img"/></a>
+    <a href="https://coronavirus.saude.mg.gov.br/blog/117-distanciamento-social-na-covid-19" target="_blank"><img src={pn3} alt=""class="img"/></a>
+    </div>
+  </div>
+  <div className="bt">
+    {navigatorHasShare ? renderShareButton : renderCopyButton}
+  </div>        
+  </Card>   
   )
 }
 

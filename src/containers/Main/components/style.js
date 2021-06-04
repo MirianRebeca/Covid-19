@@ -9,21 +9,25 @@ export const LabelStyled = styled(Typography)`
 export const ValueStyled = styled(Typography)`
   font-weight: 400;
   font-size: 1.7rem;
+  font-family: Franklin Gothic Medium;
+  color: rgb(22,80,60);
 `
 
 export const CardContentStyled = styled(CardContent)`
-  backgroud-color
-  border-left: 5px solid ${({ color }) => color || '#5d78ff'};
+  background-color: rgb(175,253,191);
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  border-left: 3px solid ${({ color }) => color || '70e000'};
 `
 
 export const CardPanelContentStyled = styled(CardContent)`
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+  background-color: rgb(175,253,191);
 `
 
 export const ItemStyled = styled.div`
   display: flex;
   justify-content: space-between;
-  min-width: 150px;
+  min-width: 130px;
 `

@@ -23,7 +23,7 @@ const COUNTRIES = [
     flag: ChinaFlag
   },
   {
-    label: 'Estados Unidos',
+    label: 'EUA',
     value: 'usa',
     flag: UsaFlag
   },

@@ -1,6 +1,6 @@
 {
-  "short_name": "PWA",
-  "name": "Covis 19 PWA",
+  "short_name": "Covid-19",
+  "name": "Covid-19 PWA",
   "icons": [
     {
       "src": "favicon.ico",
