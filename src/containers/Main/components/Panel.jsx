@@ -21,16 +21,12 @@ function Panel({ updateAt, onChange, data, country, getCoviddata }) {
     </MenuItem>
   )
 
-  const textCovid19 = ''
-
   const copyInfo = () => {
-    navigator.clipboard.writeText(textCovid19)
+    navigator.clipboard.writeText()
   }
 
   const shareInfo = () => {
     navigator.share({
-      title: `Dados do Covid19 - ${country}`,
-      text: textCovid19,
       url: 'https://painelcoronavirus.netlify.app/'
     })
   }
